@@ -11,9 +11,8 @@ load_dotenv()
 
 admins = [384449598305075200]
 
-passw = os.getenv('PASSWORD')
 
-uri = f"mongodb+srv://purci:{passw}@cluster0.ertx51f.mongodb.net/?retryWrites=true&w=majority"
+uri = os.getenv('URI')
 client = MongoClient(uri, server_api=ServerApi('1'))
 try:
     client.admin.command('ping')
